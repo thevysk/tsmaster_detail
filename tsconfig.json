@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"target": "es2022",
+		"module": "es2022",
+		"moduleResolution": "node",
+		"skipLibCheck": true,
+		"allowJs": true,
+		"strict": true,
+        "preserveConstEnums": true,
+        "sourceMap": false,
+		"strictNullChecks": false,
+		"strictPropertyInitialization": false,
+		"rootDir": "./src",
+		"outDir": "./webapp",
+		"types": ["@sapui5/types", "@types/qunit"],
+		"paths": {
+			"com/vysk/ui5_ts_template/*": ["./src/*"],
+			"unit/*": ["./src/test/unit/*"],
+			"integration/*": ["./src/test/integration/*"]
+		}
+	},
+	"include": ["./src/**/*"]
+}
