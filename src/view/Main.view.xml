@@ -1,25 +1,28 @@
 <mvc:View
-	controllerName="com.vysk.ui5_ts_template.controller.Main"
+	controllerName="com.vysk.tsmaster_detail.controller.Main"
 	displayBlock="true"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	core:require="{
-		formatter: 'com/vysk/ui5_ts_template/model/formatter'
+		formatter: 'com/vysk/tsmaster_detail/model/formatter'
 	}">
-
-	<MessagePage
-		title="{i18n>appTitle}"
-		text="{i18n>appTitle}"
-		icon="sap-icon://accept"
-		id="page"
-		description="{i18n>appDescription}">
-		<buttons>
-			<Button
-				id="helloButton"
-				text="{formatter: 'formatter.formatValue', path: 'i18n>btnText'}"
-				press="sayHello" />
-		</buttons>
-	</MessagePage>
-
+	<Page  title="{i18n>appTitle}">
+		<List items="{oData>/Products}" id ='prodList'>
+				<headerToolbar>
+			<OverflowToolbar>
+				<Title text="Products" level="H2" />
+				<ToolbarSpacer />
+				<SearchField liveChange="onSearch" width="50%" />
+			</OverflowToolbar>
+		</headerToolbar>
+			<StandardListItem
+				title="{oData>ProductID}"
+				description="{oData>ProductName}"
+				iconDensityAware="false"
+				iconInset="false"
+				type="Navigation" 
+				press ='onNavigatetoDetail'/>
+		</List>
+	</Page>
 </mvc:View>

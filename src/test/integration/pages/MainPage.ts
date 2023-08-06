@@ -1,7 +1,7 @@
 import Opa5 from "sap/ui/test/Opa5";
 import Press from "sap/ui/test/actions/Press";
 
-const viewName = "com.vysk.ui5_ts_template.view.Main";
+const viewName = "com.vysk.tsmaster_detail.view.Main";
 
 export default class MainPage extends Opa5 {
 	// Actions

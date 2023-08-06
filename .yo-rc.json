@@ -1,14 +1,14 @@
 {
   "generator-ui5-ts-app": {
-    "namespace": "com.vysk.ui5_ts_template",
+    "namespace": "com.vysk.tsmaster_detail",
     "framework": "SAPUI5",
     "frameworkVersion": "1.116.0",
     "author": "thevysk",
     "initrepo": false,
     "tstypes": "@sapui5/types",
     "tstypesVersion": "1.116.0",
-    "appId": "com.vysk.ui5_ts_template",
-    "appURI": "com/vysk/ui5_ts_template",
+    "appId": "com.vysk.tsmaster_detail",
+    "appURI": "com/vysk/tsmaster_detail",
     "cdnDomain": "ui5.sap.com",
     "defaultTheme": "sap_horizon",
     "gte11150": true,

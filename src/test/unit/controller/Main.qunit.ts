@@ -1,4 +1,4 @@
-import Main from "com/vysk/ui5_ts_template/controller/Main.controller";
+import Main from "com/vysk/tsmaster_detail/controller/Main.controller";
 
 QUnit.module("Sample Main controller test");
 

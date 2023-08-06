@@ -1,4 +1,4 @@
-# UI5 Application com.vysk.ui5_ts_template
+# UI5 Application com.vysk.tsmaster_detail
 
 Insert the purpose of this project and some interesting info here...
 

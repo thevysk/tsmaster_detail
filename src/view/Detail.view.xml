@@ -1,0 +1,142 @@
+<mvc:View
+	controllerName="com.vysk.tsmaster_detail.controller.Detail"
+	displayBlock="true"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+    xmlns:forms="sap.ui.layout.form"
+	core:require="{
+		formatter: 'com/vysk/tsmaster_detail/model/formatter'
+	}">
+<m:Page title="{i18n>appTitle}">
+	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageHeader objectTitle="{Product>/CurrentProd/ProductID} {Product>/CurrentProd/ProductName}">
+
+			</ObjectPageHeader>
+		</headerTitle>
+
+		<headerContent>
+			<m:ObjectAttribute title="Discontinued: {Product>/CurrentProd/Discontinued} "/>
+			<m:ObjectAttribute title="CategoryID: {Product>/CurrentProd/CategoryID} "/>
+			<m:ObjectAttribute title="SupplierID: {Product>/CurrentProd/SupplierID} "/>
+		</headerContent>
+
+		<sections>
+			<ObjectPageSection titleUppercase="false" title="Quantity">
+				<subSections>
+					<ObjectPageSubSection title="Price Details" titleUppercase="false">
+						<blocks>
+                            <forms:SimpleForm
+                                title="Price"
+                                editable="false"
+                                layout="ColumnLayout">
+
+                                <m:Label text="QuantityPerUnit"/>
+                                <m:Text text=" {Product>/CurrentProd/QuantityPerUnit}"/>
+
+                                <m:Label text="UnitPrice"/>
+                                <m:Text text=" {Product>/CurrentProd/UnitPrice}"/>
+
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection title="Stock Details" titleUppercase="false">
+						<blocks>
+                             <forms:SimpleForm
+                                title="Stock"
+                                editable="false"
+                                layout="ColumnLayout">
+
+                                <m:Label text="ReorderLevel"/>
+                                <m:Text text=" {Product>/CurrentProd/ReorderLevel}"/>
+
+                                <m:Label text="UnitsOnOrder"/>
+                                <m:Text text=" {Product>/CurrentProd/UnitsOnOrder}"/>
+
+                                <m:Label text="UnitsInStock"/>
+                                <m:Text text=" {Product>/CurrentProd/UnitsInStock}"/>
+
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			
+			<ObjectPageSection titleUppercase="false" title="Supplier - Category">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<blocks>
+								<m:IconTabBar
+                                    id="idIconTabBarNoIcons"
+                                    expanded="{device>/isNoPhone}"
+                                    class="sapUiResponsiveContentPadding">
+                                    <m:items>
+                                        <m:IconTabFilter text="Supplier" key="Supplier">
+                                         <forms:SimpleForm
+                                            title="Stock"
+                                            editable="false"
+                                            layout="ColumnLayout">
+                                                <m:Label text="CategoryID" />
+                                                <m:Text text="{Product>/CurrentProd/Category/CategoryName}" />
+                                                <m:Label text="Description" />
+                                                <m:Text text="{Product>/CurrentProd/Category/Description}" />
+                                                <m:Label text="CategoryID" />
+                                                <m:Text text="{Product>/CurrentProd/Category/CategoryID}" /> 
+                                            </forms:SimpleForm>
+                                        </m:IconTabFilter>
+                                        <m:IconTabFilter text="Customer" key="Customer">
+                                            <forms:SimpleForm
+                                            title="Stock"
+                                            editable="false"
+                                            layout="ColumnLayout">
+                                                <m:Label text="ContactName" />
+                                                <m:Text text="{Product>/CurrentProd/Supplier/ContactName}" /> 
+                                                <m:Label text="CompanyName" />
+                                                <m:Text text="{Product>/CurrentProd/Supplier/CompanyName}" /> 
+                                                <m:Label text="City" />
+                                                <m:Text text="{Product>/CurrentProd/Supplier/City}" /> 
+                                                <m:Label text="Address" />
+                                                <m:Text text="{Product>/CurrentProd/Supplier/Address}" /> 
+                                                 <m:Label text="PostalCode" />
+                                                <m:Text text="{Product>/CurrentProd/Supplier/PostalCode}" /> 
+                                                <m:Label text="Phone" />
+                                                <m:Text text="{Product>/CurrentProd/Supplier/Phone}" /> 
+                                                <m:Label text="Country" />
+                                                <m:Text text="{Product>/CurrentProd/Supplier/Country}" /> 
+                                                <m:Label text="ContactTitle" />
+                                                <m:Text text="{Product>/CurrentProd/Supplier/ContactTitle}" /> 
+                                                <m:Label text="SupplierID" />
+                                                <m:Text text="{Product>/CurrentProd/Supplier/SupplierID}" />
+                                                <m:Label text="Region" />
+                                                <m:Text text="{Product>/CurrentProd/Supplier/Region}" />
+                                               
+                                            </forms:SimpleForm>
+                                        </m:IconTabFilter>
+                                    </m:items>
+                                </m:IconTabBar>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection titleUppercase="false" title="Order Details">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<blocks>
+                          <core:Fragment fragmentName="com.vysk.tsmaster_detail.fragments.OrderDetails" type="XML" />
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+
+		</sections>
+
+	</ObjectPageLayout>
+
+
+</m:Page>
+
+</mvc:View>

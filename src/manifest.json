@@ -2,13 +2,22 @@
 	"_version": "1.12.0",
 
 	"sap.app": {
-		"id": "com.vysk.ui5_ts_template",
+		"id": "com.vysk.tsmaster_detail",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
 		"applicationVersion": {
 			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+					"uri": "/Northwind/V2/Northwind/Northwind.svc/",
+					"type": "OData",
+					"settings": {	
+						"odataVersion": "2.0"
+					}
+			}
 		}
 	},
 
@@ -24,7 +33,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "com.vysk.ui5_ts_template.view.App",
+			"viewName": "com.vysk.tsmaster_detail.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "app"
@@ -49,7 +58,21 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "com.vysk.ui5_ts_template.i18n.i18n"
+					"bundleName": "com.vysk.tsmaster_detail.i18n.i18n"
+				}
+			},
+			"oData":  {
+				"dataSource": "mainService",
+				"settings": {
+				"defaultBindingMode": "TwoWay",
+				"defaultCountMode": "Inline"
+				}
+			},
+			"local":  {
+				"type" : "sap.ui.model.json.JSONModel",
+				"settings": {
+				"defaultBindingMode": "TwoWay",
+				"defaultCountMode": "Inline"
 				}
 			}
 		},
@@ -58,7 +81,7 @@
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"viewPath": "com.vysk.ui5_ts_template.view",
+				"viewPath": "com.vysk.tsmaster_detail.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"async": true
@@ -68,12 +91,20 @@
 					"pattern": "",
 					"name": "main",
 					"target": "main"
+				},{
+					"pattern": "detail/{id}",
+					"name": "detail",
+					"target": "detail"
 				}
 			],
 			"targets": {
 				"main": {
 					"viewId": "main",
 					"viewName": "Main"
+				},
+				"detail": {
+					"viewId": "detail",
+					"viewName": "Detail"
 				}
 			}
 		}

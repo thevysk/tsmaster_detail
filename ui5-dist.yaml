@@ -1,6 +1,6 @@
 specVersion: "3.0"
 metadata:
-  name: com.vysk.ui5_ts_template
+  name: com.vysk.tsmaster_detail
 type: application
 resources:
   configuration:

@@ -3,7 +3,7 @@ import models from "./model/models";
 import Device from "sap/ui/Device";
 
 /**
- * @namespace com.vysk.ui5_ts_template
+ * @namespace com.vysk.tsmaster_detail
  */
 export default class Component extends UIComponent {
 	public static metadata = {
@@ -21,6 +21,7 @@ export default class Component extends UIComponent {
 
 		// create the views based on the url/hash
 		this.getRouter().initialize();
+		sap.ui.getCore().setModel(this.getModel('i18n'), "i18n");
 	}
 
 	/**

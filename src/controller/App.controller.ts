@@ -1,7 +1,7 @@
 import BaseController from "./BaseController";
 
 /**
- * @namespace com.vysk.ui5_ts_template.controller
+ * @namespace com.vysk.tsmaster_detail.controller
  */
 export default class App extends BaseController {
 	public onInit(): void {

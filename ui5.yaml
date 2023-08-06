@@ -1,6 +1,6 @@
 specVersion: "3.0"
 metadata:
-  name: com.vysk.ui5_ts_template
+  name: com.vysk.tsmaster_detail
 type: application
 framework:
   name: SAPUI5
@@ -9,6 +9,7 @@ framework:
     - name: sap.m
     - name: sap.ui.core
     - name: themelib_sap_horizon
+    - name: sap.uxap
 builder:
   customTasks:
     - name: ui5-tooling-transpile-task
@@ -19,3 +20,8 @@ server:
       afterMiddleware: compression
     - name: ui5-middleware-livereload
       afterMiddleware: compression
+    - name: ui5-middleware-simpleproxy
+      mountPath: /Northwind/V2/Northwind/Northwind.svc/
+      afterMiddleware: compression
+      configuration:
+        baseUri: https://services.odata.org/V2/Northwind/Northwind.svc/

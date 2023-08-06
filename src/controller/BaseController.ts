@@ -8,7 +8,7 @@ import Router from "sap/ui/core/routing/Router";
 import History from "sap/ui/core/routing/History";
 
 /**
- * @namespace com.vysk.ui5_ts_template.controller
+ * @namespace com.vysk.tsmaster_detail.controller
  */
 export default abstract class BaseController extends Controller {
 	/**
@@ -80,4 +80,5 @@ export default abstract class BaseController extends Controller {
 			this.getRouter().navTo("main", {}, undefined, true);
 		}
 	}
+	
 }

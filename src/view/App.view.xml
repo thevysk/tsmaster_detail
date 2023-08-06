@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="com.vysk.ui5_ts_template.controller.App"
+	controllerName="com.vysk.tsmaster_detail.controller.App"
 	displayBlock="true"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
